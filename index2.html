@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移入悬浮框(普通)</title>
+    <style>
+        ul{
+            list-style: none;
+            margin-top: 200px;
+        }
+        li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: deepskyblue;
+            position: relative;
+            margin-right: 50px;
+        }
+        li div{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: red;
+            top: -40px;
+            left: 0px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var ul = document.getElementsByTagName('ul')[0];
+            var ali = ul.getElementsByTagName('li');
+            for(var i= 0; i<ali.length ; i++){
+                ali[i].onmouseover = function () {
+                    this.getElementsByTagName('div')[0].style.display = 'block';
+                }
+                ali[i].onmouseout = function () {
+                    this.getElementsByTagName('div')[0].style.display = 'none';
+                }
+            }
+        }
+    </script>
+        </head>
+<body>
+<ul>
+    <li>
+        <div></div>
+    </li>
+    <li>
+        <div></div>
+    </li>
+    <li>
+        <div></div>
+    </li>
+    <li>
+        <div></div>
+    </li>
+</ul>
+</body>
+</html>
